@@ -14,4 +14,7 @@ GET http://localhost:5000/courses
 # }
 # ###
 
-GET https://cse341-test.onrender.com/
+GET https://week01.onrender.com
+
+###
+https://week01.onrender.com/courses
