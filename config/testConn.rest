@@ -1,0 +1,84 @@
+GET http://localhost:5000/
+
+###
+GET http://localhost:5000/courses
+
+###
+
+# POST https://example.com/comments HTTP/1.1
+# content-type: application/json
+
+# {
+#     "name": "sample",
+#     "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+# }
+# ###
+
+GET https://week01.onrender.com
+
+###
+https://week01.onrender.com/courses
+
+###
+GET http://localhost:5000/contacts
+###
+GET http://localhost:5000/contacts/63c36855a937824528422e0a
+
+
+
+
+
+
+###
+POST http://localhost:5000/contacts
+content-type: application/json
+
+{
+    "firstName": "Luisa"
+    , "lastName": "Quispe"
+    , "email": "sud86@hotmail.com"
+    , "favoriteColor": "Unknown"
+    , "birthday": "May 10 1986"
+}
+
+###
+POST http://localhost:5000/contacts
+content-type: application/json
+
+{
+    "firstName": "Wyatt"
+    , "lastName": "Quispe"
+    , "email": "na@na.com"
+    , "favoriteColor": "Orange"
+    , "birthday": "October 25 2015"
+}
+
+###
+POST http://localhost:5000/contacts
+content-type: application/json
+
+{
+    "firstName": "Ernesto"
+    , "lastName": "Quispe"
+    , "email": "aries9025@hotmail.com"
+    , "favoriteColor": "Green"
+    , "birthday": "April 4 1990"
+}
+
+
+//update contact:
+
+###
+PUT http://localhost:5000/contacts/63c36802a937824528422e06
+content-type: application/json
+
+{
+    "firstName": "Luisa"
+    , "lastName": "Quispe"
+    , "email": "sud86@hotmail.com"
+    , "favoriteColor": "Green"
+    , "birthday": "May 10 1986"
+}
+
+###
+DELETE http://localhost:5000/contacts/63c36802a937824528422e06

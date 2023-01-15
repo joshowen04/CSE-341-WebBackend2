@@ -1,59 +1,35 @@
-// const http = require('http');
+const express = require('express'),
+  app = express(),
+  port = process.env.PORT || 3000;
+  mongoose = require('mongoose'),
+  cors = require('cors'),
+  Contact = require('./models/contactsModels.js'), //created model loading here
+  bodyParser = require('body-parser');
 
-// const hostname = '127.0.0.1';
-// const port = 3000;
+mongoose.Promise = global.Promise;
+require('dotenv').config({path:"./config/.env"});
+MONGODB_URL = process.env.MONGODB_URL;
+console.log(`Database URL is ${MONGODB_URL}`);
 
-// const server = http.createServer((req, res) => {
+mongoose.connect(MONGODB_URL); 
 
-//   if (req.url === '/'){
-//     res.statusCode = 200;
-//     res.setHeader('Content-Type', 'text/plain');
-//     res.end('Hello World');
-//   }
-//   if (req.url === '/contacts'){
-//     res.write(JSON.stringify([1,2,3]));
-//     res.end();
-//   }
-// });
+app.use(cors())
 
-// server.listen(port, hostname, () => {
-//   console.log(`Server running at http://${hostname}:${port}/`);
-// });
-//$env:PORT = '5000'
-
-// app.get('/',(req,res) => {
-//   res.send('Hello World')
-// });
-// app.get('/contacts',(req,res) => {
-//   res.send('Luisa Quispe')
-// });
-// app.get('/api/courses',(req,res) => {
-//   res.send(courses)
-// });
-// app.get('/api/courses/:id', (req,res) => {
-//   let course = courses.find(c => (c.id === parseInt(req.params.id)));
-//   if (!course) res.status(404).send("The course wasn't found")
-//   else res.send(course.name)
-// });
-
-// app.get('/api/posts/:year/:month', (req,res) =>{
-//   res.send(req.params.id)
-//   //res.send(req.query) - /api/posts/2018/1?sortBy=name
-// });
-//app.use(express.static(__dirname + '/public'));
-
-const port = process.env.PORT || 3000;
-
-const express = require('express')
-
-app = express();
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
-app.use('/', require('./routes'));
+routes = require('./routes/contactsRoutes.js'); //importing route
+routes(app); //register the route
 
 
 app.listen(port, () => console.log(`listening on port ${port}`));
 
+
+app.use(function(req, res) {
+    res.status(404).send({url: req.originalUrl + ' not found'})
+  });
 
 // app.get()
 // app.post()
