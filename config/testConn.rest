@@ -1,32 +1,12 @@
-GET http://localhost:5000/
+# GET http://localhost:5000/
 
-###
-GET http://localhost:5000/courses
-
-###
-
-# POST https://example.com/comments HTTP/1.1
-# content-type: application/json
-
-# {
-#     "name": "sample",
-#     "time": "Wed, 21 Oct 2015 18:27:50 GMT"
-# }
 # ###
-
-GET https://week01.onrender.com
-
-###
-https://week01.onrender.com/courses
+# GET http://localhost:5000/courses
 
 ###
 GET http://localhost:5000/contacts
 ###
 GET http://localhost:5000/contacts/63c36855a937824528422e0a
-
-
-
-
 
 
 ###
@@ -82,3 +62,13 @@ content-type: application/json
 
 ###
 DELETE http://localhost:5000/contacts/63c36802a937824528422e06
+
+
+//Production:
+
+### 
+GET https://week01.onrender.com/contacts
+
+### 
+GET https://week01.onrender.com/contacts/63c36852a937824528422e08
+
