@@ -23,6 +23,8 @@ const ContactSchema = new Schema({
     type: String,
     required: 'Kindly enter the favorite Color'
   }
-});
+},
+{collection:"contacts"}
+);
 
 module.exports = mongoose.model('Contacts', ContactSchema);
