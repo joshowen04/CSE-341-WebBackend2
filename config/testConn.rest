@@ -14,8 +14,8 @@ POST http://localhost:5000/contacts
 content-type: application/json
 
 {
-    "firstName": "Luisa"
-    , "lastName": "Quispe"
+    "firstName": "Joshua"
+    , "lastName": "Owen"
     , "email": "sud86@hotmail.com"
     , "favoriteColor": "Unknown"
     , "birthday": "May 10 1986"

@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 const CoursesSchema = new Schema({
   id: {
     type: int,
