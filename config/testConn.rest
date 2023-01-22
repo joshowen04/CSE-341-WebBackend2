@@ -35,7 +35,7 @@ content-type: application/json
     "firstName": "Luisa"
     , "lastName": "Quispe"
     , "email": "sud86@hotmail.com"
-    , "favoriteColor": "red"
+    , "favoriteColor": "Blue-Green"
     , "birthday": "May 10 1986"
 }
 
@@ -55,18 +55,18 @@ DELETE http://localhost:5000/contacts/63cca4cceb1ebb35e5a5552d
 GET https://week01.onrender.com/contacts
 
 ### 
-GET https://week01.onrender.com/contacts/63c36852a937824528422e08
+GET https://week01.onrender.com/contacts/63c88c5f225c6e8df9f702e7
 
 ###
 ## update contact:
-PUT https://week01.onrender.com/contacts/63c36802a937824528422e06
+PUT https://week01.onrender.com/contacts/63c88c5f225c6e8df9f702e7
 content-type: application/json
 
 {
     "firstName": "Luisa"
     , "lastName": "Quispe"
     , "email": "sud86@hotmail.com"
-    , "favoriteColor": "Green"
+    , "favoriteColor": "Red"
     , "birthday": "May 10 1986"
 }
 
@@ -86,4 +86,4 @@ content-type: application/json
 
 ###
 ## Delete a specific contact
-DELETE https://week01.onrender.com/contacts/63c36802a937824528422e06
+DELETE https://week01.onrender.com/contacts/63cca7d38f33ef2ff170e001
