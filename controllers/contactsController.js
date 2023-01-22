@@ -31,7 +31,7 @@ update_a_contact = function (req, res) {
     { new: true },
     function (err, contact) {
       if (err) res.send(err);
-      res.status(204);
+      res.status(204).json({ message: 'Contact successfully updated' });
     }
   );
 };
