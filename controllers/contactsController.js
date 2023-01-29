@@ -37,9 +37,16 @@ create_a_contact = function (req, res) {
 };
 
 update_a_contact = function (req, res) {
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
   Contact.findOneAndUpdate(
     { _id: req.params.contactId },
-    req.body,
+    contact,
     { new: true },
     function (err, contact) {
       if (err) res.send(err);
