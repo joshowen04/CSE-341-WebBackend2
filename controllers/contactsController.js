@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 Contact = mongoose.model('Contacts');
 
+const m2s = require('mongoose-to-swagger');
+// const Cat = mongoose.model('Cat', { name: String });
+const swaggerSchema = m2s(Contact);
+console.log(swaggerSchema);
+
 list_all_contacts = function (req, res) {
   Contact.find({}, function (err, contact) {
     if (err) res.send(err);
@@ -16,7 +21,14 @@ read_a_contact = function (req, res) {
 };
 
 create_a_contact = function (req, res) {
-  const new_contact = new Contact(req.body);
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const new_contact = new Contact(contact);
   new_contact.save(function (err, contact) {
     if (err) res.send(err);
     res.status(201).json(contact['_id']);
