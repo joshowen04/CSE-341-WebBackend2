@@ -87,3 +87,26 @@ content-type: application/json
 ###
 ## Delete a specific contact
 DELETE https://week01.onrender.com/contacts/63cca7d38f33ef2ff170e001
+
+###
+Get https://cs341-week-2-personal.onrender.com/contacts
+content-type: application/json
+{
+    "firstName": "De"
+    , "lastName": "Marie"
+    , "email": "dmarier@anything.com"
+    , "favoriteColor": "red"
+    , "birthday": "03/25/1984"
+}
+
+###
+PUT https://cs341-week-2-personal.onrender.com/contacts/63ccad08edb21edbb8e5fc21
+content-type: application/json
+
+{
+    "firstName": "De"
+    , "lastName": "Marie"
+    , "email": "dmarier@anything.com"
+    , "favoriteColor": "Screaming Blue"
+    , "birthday": "03/25/1984"
+}
